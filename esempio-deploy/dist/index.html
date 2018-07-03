@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>devexp.io - formazione su front-end, Angular, SCSS, SASS, CSS, HTML5, Node e Mobile in Italia, in
+        italiano</title>
+    <meta content="Libri, articoli, corsi e workshop per aziende e privati su front-end, Angular, HTML5, CSS, SASS e SCSS, mobile e nodejs"
+          name="description">
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+
+    <link href="/assets/prism.css" rel="stylesheet"/>
+    <script src="/assets/prism.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700i|Yanone+Kaffeesatz:700" rel="stylesheet">
+</head>
+<body>
+
+
+<header>
+    <a href="/" class="logo">
+        <img class="logo-header" src="/assets/logo-header.png" alt="devexp.io"/>
+    </a>
+    <a href="/" class="button">Angular</a>
+</header>
+
+<div class="issue-content hidden"></div>
+
+
+<div class="row">
+    <div class="col-md-6 col-sm-last col-md-first col-sm-12 box orange">
+        <h1 class="center">Angular devexp</h1>
+        <div class="flexbox">
+            <img class="girl-email" src="/assets/girl-email.png" alt="Registrati a devexp.io"/>
+            <ul class="unstyled important">
+                <li>ottieni risposte dagli esperti alle tue <u>domande su Angular e front-end</u></li>
+                <li>in anteprima gli articoli su Angular e front-end, <u>gratis in formato e-book e PDF nella tua e-mail</u></li>
+                <li><u>buono di 100€</u> da usare per un workshop di 3 giorni</li>
+            </ul>
+        </div>
+        <div class="register">
+            <input type="email" id="register-email" placeholder="entra in devexp.io con la tua e-mail"/>
+            <a class="button orange"
+               onclick="return send('register', {email: v('register-email'), message: 'new dev registered'}, 'thanks-registered')">
+                <svg class="icon white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M21 12l-18 12v-24z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-12 box blu">
+        <h1 class="center">Angular Corso completo + 10 esempi da casi d'uso reali</h1>
+        <div class="flexbox">
+            <img class="girl-book" src="/assets/girl-book.png" alt="Acquista il libro"/>
+            <ul class="unstyled important">
+                <li>il libro definitivo per imparare Angular</li>
+                <li>non un manuale, ma l'esperienza che serve
+                    per essere efficaci nello sviluppare siti,
+                    dashboard CRUD o web-app mobile
+                </li>
+                <li>disponibile su Amazon in 3 formati</li>
+            </ul>
+        </div>
+        <div class="books">
+            <a class="book" target="_blank" href="https://www.amazon.it/dp/B07F5VS7DY">
+                <img class="small" src="/assets/book.png" alt="Formato Amazon Kindle"/>
+                <h2>Kindle
+                    <small>9
+                        <small>,99€</small>
+                    </small>
+                </h2>
+            </a>
+            <a class="book" target="_blank" href="https://www.amazon.it/dp/1983315591">
+                <img class="pocket" src="/assets/book.png" alt="Formato cartaceo compatto"/>
+                <h2>Pocket
+                    <small>19
+                        <small>,99€</small>
+                    </small>
+                </h2>
+            </a>
+            <a class="book" href="#" onclick="return toggle('xl-wip');">
+                <img src="/assets/book.png" alt="Formato cartaceo grande a colori"/>
+                <h2>XL Full Color
+                    <small>29
+                        <small>,99€</small>
+                    </small>
+                </h2>
+            </a>
+        </div>
+        <div class="center">
+            <b><small>La versione Kindle è compresa con le versioni Pocket e XL</small></b>
+        </div>
+        <div class="center">
+            <a href="/libro-angular">
+                Codici e demo delle esercitazioni
+            </a>
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-12 box green last-articles">
+        <h1 class="center">
+            Ultimi articoli
+        </h1>
+        <p class="center important">approfondimenti, nuove tecniche e tip per essere più efficienti</p>
+        <div class="articles">
+
+            <a href="/blog/angular-tip-accedere-ad-un-elemento-del-dom-dalla-classe-di-un-componente" class="blog-entry">
+                <img src="blog/angular-tip-accedere-ad-un-elemento-del-dom-dalla-classe-di-un-componente/images/image1.png"/>
+
+                <div class="blog-content">
+                    <h3>
+                        Angular Tip: Come accedere ad un elemento DOM dalla classe di un componente
+                    </h3>
+                    <p>
+                        In questo articolo vedremo come controllare programmaticamente alcune parti del template
+                        dalla classe. Gli elementi del template che possiamo controllare possono essere tag nativi,
+                        o
+                        anche componenti, potendo così accedere ai metodi di tali componenti dalla classe di un
+                        altro
+                        componente.
+                    </p>
+                </div>
+
+            </a>
+
+
+        </div>
+
+    </div>
+    <div class="col-md-6  col-sm-12 box violet worksho-section">
+        <h1 class="center">Prossimi Workshop</h1>
+        <p class="center important">un'esperienza, un corso e una vacanza: 3 giorni formativi, divertenti e rilassanti</p>
+        <div class="workshop">
+
+            <div class="info">
+                <div class="flexbox">
+                    <h2>Angular 6</h2>
+                    <div class="when-where">
+                        <div class="ww-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M20 20h-4v-4h4v4zm-6-10h-4v4h4v-4zm6 0h-4v4h4v-4zm-12 6h-4v4h4v-4zm6 0h-4v4h4v-4zm-6-6h-4v4h4v-4zm16-8v22h-24v-22h3v1c0 1.103.897 2 2 2s2-.897 2-2v-1h10v1c0 1.103.897 2 2 2s2-.897 2-2v-1h3zm-2 6h-20v14h20v-14zm-2-7c0-.552-.447-1-1-1s-1 .448-1 1v2c0 .552.447 1 1 1s1-.448 1-1v-2zm-14 2c0 .552-.447 1-1 1s-1-.448-1-1v-2c0-.552.447-1 1-1s1 .448 1 1v2z"/>
+                            </svg>
+                            <span>7-8-9 settembre</span>
+                        </div>
+                        <div class="ww-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M12 3c2.131 0 4 1.73 4 3.702 0 2.05-1.714 4.941-4 8.561-2.286-3.62-4-6.511-4-8.561 0-1.972 1.869-3.702 4-3.702zm0-2c-3.148 0-6 2.553-6 5.702 0 3.148 2.602 6.907 6 12.298 3.398-5.391 6-9.15 6-12.298 0-3.149-2.851-5.702-6-5.702zm0 8c-1.105 0-2-.895-2-2s.895-2 2-2 2 .895 2 2-.895 2-2 2zm8 6h-3.135c-.385.641-.798 1.309-1.232 2h3.131l.5 1h-4.264l-.344.544-.289.456h.558l.858 2h-7.488l.858-2h.479l-.289-.456-.343-.544h-2.042l-1.011-1h2.42c-.435-.691-.848-1.359-1.232-2h-3.135l-4 8h24l-4-8zm-12.794 6h-3.97l1.764-3.528 1.516 1.528h1.549l-.859 2zm8.808-2h3.75l1 2h-3.892l-.858-2z"/>
+                            </svg>
+                            <span>Roma</span>
+                        </div>
+                    </div>
+
+                </div>
+                <ul class="unstyled">
+                    <li>Corso completo su <b>Angular</b></li>
+                    <li>Design e sviluppo <b>componenti, services,
+                        directives, pipes, forms, routing</b></li>
+                    <li>Il processo: <b>dev tools</b> e <b>automazione</b></li>
+                    <li>Esercizi e applicazioni da sistemi reali</li>
+                </ul>
+
+                <a target="_blank" href="https://www.amazon.it/dp/1983315591">
+                    <img class="book-small" src="/assets/book.png" alt="Formato Amazon Kindle"/>
+                    <span class="important">Il libro è omaggio!</span>
+                </a>
+
+                <div>
+                    <button onclick="toggle('workshop')" class="orange">INFORMAZIONI</button>
+                </div>
+            </div>
+
+
+            <div class="price-container">
+                <img class="price" alt="Prezzo per 3 giorni tutto incluso 590€" src="/assets/price.png"/>
+                <img alt="SPA" src="/assets/spa.jpg">
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+
+    <div class="row">
+        <div class="col-md-6 col-sm-12">
+            <div>
+                <img class="logo-footer" src="/assets/logo-footer.png" alt="Footer logo">
+            </div>
+            <div>
+                <ul class="unstyled vertical">
+                    <li>
+                        <a href="/angular">Angular</a>
+                    </li>
+                    <li>
+                        <a href="/privacy">Privacy / Termini e condizioni</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <div class="contact">
+                <h3>Contatti</h3>
+                <div class="contact-form">
+                    <input type="email" placeholder="Inserisci un'email per ricevere una risposta" id="message-email">
+                    <textarea onclick="this.focus();this.select()" id="message-text">Inserisci un messaggio</textarea>
+                    <button onclick="send('contact',{email: v('message-email'),message: v('message-text')},'thanks-contact')"
+                            class="orange">
+                        INVIA
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+
+<div class="hidden" id="consenso">
+    <input type="checkbox" id="modal-consensus" checked class="modal">
+    <div>
+        <div class="card">
+            <label for="modal-consensus" class="modal-close" onclick="toggle('consensus')"></label>
+            <h3 class="section">Trattamento sui dati</h3>
+            <p>
+                Questo sito utilizza i cookie per migliorare l'usabilità.
+            </p>
+            <p>
+                In particolare usiamo Google Analytics.
+            </p>
+            <p>
+                Maggiori informazioni sono disponibili nella sezione sulla <a href="/privacy">privacy</a>.
+            </p>
+            <p>
+                <button onclick="confirmCookies()">ACCONSENTO</button>
+            </p>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="hidden" id="workshop">
+    <input type="checkbox" id="modal-workshop" checked class="modal">
+    <div>
+        <div class="card">
+            <label for="modal-register" class="modal-close" onclick="toggle('workshop')"></label>
+            <h3 class="section">Informazioni sul workshop</h3>
+            <p>
+                Il workshop è pensato per chi vuole imparare Angular e
+                dura 3 giorni. Consiste nell'imparare e comprendere il framework con spiegazioni complete,
+                esempi ed esercitazioni.
+            </p>
+            <p>
+                Se hai già letto il libro ti consigliamo un workshop avanzato che sarà disponibile a breve.
+            </p>
+            <p>
+                Il workshop si terrà a Roma il 7-8-9 settembre presso una SPA che sarà comunicata via e-mail.
+                Comprende tutte le spese di vitto e alloggio.
+            </p>
+            <p>
+                Il pagamento avviene contestualmente all'arrivo.
+            </p>
+            <p>
+                Per ulteriori informazioni non esitare a chiedere:
+            </p>
+            <div class="contact-form-workshop">
+                <input type="email" placeholder="Inserisci un'email per ricevere una risposta" id="message-email-2">
+                <textarea onclick="this.focus();this.select()" id="message-text-2">Inserisci un messaggio</textarea>
+                <button onclick="send('contact-workshop',{email: v('message-email-2'),message: v('message-text-2')},'thanks-contact')"
+                        class="orange">
+                    INVIA
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="hidden" id="thanks-registered">
+    <input type="checkbox" id="modal-register" checked class="modal">
+    <div>
+        <div class="card">
+            <label for="modal-register" class="modal-close" onclick="toggle('thanks-registered')"></label>
+            <h3 class="section">Grazie per esserti registrato</h3>
+            <p class="section">
+                Benvenuto in <b>devexp.io</b>, il sito italiano dedicato ad Angular e al front-end.
+            </p>
+            <p>
+                A breve verrai contattato da <b>Salvatore</b> del team <b>devexp.io</b> per il benvenuto
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="hidden" id="thanks-contact">
+    <input type="checkbox" id="modal-contact" checked class="modal">
+    <div>
+        <div class="card">
+            <label for="modal-register" class="modal-close" onclick="toggle('thanks-contact')"></label>
+            <h3 class="section">Grazie per averci contattato</h3>
+            <p>
+                A breve riceverai una risposta da <b>Salvatore</b> del team <b>devexp.io</b>.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="hidden" id="xl-wip">
+    <input type="checkbox" id="modal-xl" checked class="modal">
+    <div>
+        <div class="card">
+            <label for="modal-register" class="modal-close" onclick="toggle('xl-wip')"></label>
+            <h3 class="section">Grazie per l'interesse nel formato XL</h3>
+            <p>
+                Il formato XL verrà pubblicato nei prossimi giorni. Grazie.
+            </p>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+
+    function v(id) {
+        return document.querySelector('#' + id).value
+    }
+
+    function send(tag, params, popup) {
+        var http = new XMLHttpRequest()
+        http.open('POST', 'https://api.devexp.io/contact?tag=' + tag)
+        http.setRequestHeader('Content-type', 'application/json')
+        http.send(JSON.stringify(params))
+        http.onload = function () {
+            var json = JSON.parse(http.responseText)
+            if (json.ok) {
+                toggle(popup)
+            }
+        }
+    }
+
+    function toggle(id, skipGA) {
+        if(skipGA){} else
+        ga('send', {
+            hitType: 'event',
+            eventCategory: id
+        });
+        try {
+            let el = document.querySelector("#" + id)
+            if (el.classList.contains("hidden"))
+                el.className = ""
+            else
+                el.className = "hidden"
+        } catch (e) {
+            console.log(e)
+        }
+    }
+
+    function confirmCookies(){
+        localStorage.setItem("confirm-cookies", "ok")
+        toggle("consenso", true)
+    }
+
+    var confirmed = localStorage.getItem("confirm-cookies")
+    if(!confirmed){
+        toggle("consenso", true)
+    }
+
+
+</script>
+
+<!-- Google Analytics -->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-121685812-1', 'auto');
+    ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+<script type="text/javascript">
+    if (window.location.hostname.indexOf("www") == 0) {
+        window.location = window.location.href.replace("www.","");
+    }
+</script>
+
+
+</body>
+</html>
